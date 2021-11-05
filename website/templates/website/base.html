@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% load static %}
+{% load compress %}
+<html>
+<head>
+    <title>{% block title %}{% endblock title %} - LEAP</title>
+    {% compress css %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'css/app.scss' %}">
+    {% endcompress %}
+</head>
+<body>
+{% include 'website/nav.html' %}
+<div id="page">
+    {% block content %}{% endblock content %}
+</div>
+</body>
+</html>
