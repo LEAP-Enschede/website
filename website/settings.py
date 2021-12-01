@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'compressor',
 ]
 
 MIDDLEWARE = [
@@ -132,19 +131,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = BASE_DIR / 'website/static'
-
-STATICFILES_DIRS = [
-    BASE_DIR / '*/static'
-]
-
-STATICFILES_FINDERS = [
-    'compressor.finders.CompressorFinder',
-]
-
-COMPRESS_PRECOMPILERS = (
-    ('text/x-scss', 'django_libsass.SassCompiler'),
-)
+STATIC_ROOT = env("STATIC_ROOT", default=BASE_DIR / 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
