@@ -3,3 +3,4 @@ venv/
 .idea/
 .env
 CACHE/
+__pycache__/

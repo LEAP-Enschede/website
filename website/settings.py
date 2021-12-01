@@ -86,10 +86,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.'+env("DB_ENGINE", default='sqlite'),
         'NAME': env("DB_NAME", default='db.sqlite'),
-        'USER': env("DB_USER"),
-        'PASSWORD': env("DB_PASSWORD"),
-        'HOST': env("DB_HOST"),
-        'PORT': env("DB_PORT")
+        'USER': env("DB_USER", default=''),
+        'PASSWORD': env("DB_PASSWORD", default=''),
+        'HOST': env("DB_HOST", default=''),
+        'PORT': env("DB_PORT", default='')
     }
 }
 
