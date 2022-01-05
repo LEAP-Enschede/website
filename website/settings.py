@@ -27,16 +27,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(env("DEBUG"))
+DEBUG = env("DEBUG") in ['true', 'True']
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = env('ALLOWED_HOSTS', default="").split(',')
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'home.apps.HomeConfig',
     'activities.apps.ActivitiesConfig',
     'profiles.apps.ProfilesConfig',
+    'events.apps.EventsConfig',
+    'pages.apps.PagesConfig',
+    'news.apps.NewsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -137,6 +141,12 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static',
     BASE_DIR / 'dist',
 ]
+
+# User uploaded media files
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = env("MEDIA_ROOT", default=BASE_DIR / 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

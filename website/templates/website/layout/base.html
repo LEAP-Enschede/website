@@ -5,10 +5,11 @@
     <title>{% block title %}{% endblock title %} - LEAP</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/app.css' %}">
 </head>
-<body>
-{% include 'website/nav.html' %}
-<div id="page">
+<body class="bg-dark text-white">
+{% include 'website/layout/nav.html' %}
+<div id="page" class="container pt-4">
     {% block content %}{% endblock content %}
 </div>
+{% include 'website/layout/footer.html' %}
 </body>
 </html>

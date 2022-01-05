@@ -1,1 +1,42 @@
+@import '@fortawesome/fontawesome-free/css/all.css';
+
+@import 'bootstrap/scss/functions';
+
+$primary: #F4A820;
+$secondary: darken($primary, 20);
+$dark: #231F20;
+$white: #FFFFFF;
+
+
+//Custom card theme
+$card-bg: $dark;
+$card-color: $white;
+$card-border-color: $secondary;
+
 @import 'bootstrap';
+
+.bg-darken {
+  background-color: rgba($dark, 0.5);
+  transition: background-color 100ms;
+
+  &.hoverable:hover {
+    background-color: rgba($dark, 0.8) !important;
+  }
+}
+
+.card {
+  transition: 100ms;
+
+  &-clickable:hover {
+    background: $primary;
+    border-color: $dark;
+  }
+}
+
+
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content 1fr min-content;
+}

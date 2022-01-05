@@ -1,0 +1,6 @@
+{% with view_name=request.resolver_match.view_name %}
+    <li class="nav-item">
+        <a class="nav-link {% if view_name == view %}active{% endif %}"
+           href="{% url view %}">{{ name }}</a>
+    </li>
+{% endwith %}

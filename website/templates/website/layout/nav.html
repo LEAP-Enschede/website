@@ -1,0 +1,19 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <img class="d-inline-block align-text-top" src="{% static 'img/logo.svg' %}" height="40" alt="Logo"  />
+            <img class="d-inline-block align-text-top" src="{% static 'img/logo_text.svg' %}" height="40" alt="LEAP"  />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse fs-5" id="navbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                {% include 'website/layout/includes/navlink.html' with view='home:index' name='Home' %}
+                {% include 'website/layout/includes/navlink.html' with view='news:index' name='News' %}
+                {% include 'website/layout/includes/navlink.html' with view='events:index' name='Events' %}
+            </ul>
+        </div>
+    </div>
+</nav>

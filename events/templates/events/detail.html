@@ -1,0 +1,9 @@
+{% extends 'website/layout/base.html' %}
+
+{% block title %}{{ event.title }}{% endblock title %}
+
+{% block content %}
+<h1>{{ event.title }}</h1>
+    <sub>{{ event.start }} - {{ event.end }} @ {{ event.location }}</sub>
+    <p>{{ event.description }}</p>
+{% endblock content %}}

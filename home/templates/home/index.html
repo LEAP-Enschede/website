@@ -1,0 +1,20 @@
+{% extends 'website/layout/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1>LEAP - Roundnet Enschede</h1>
+    <p>
+        Welcome to LEAP, the student roundnet association of Enschede.
+    </p>
+    <div class="row">
+        <div class="col-lg-4 col-md-6 col-8">
+            <h2>Events</h2>
+            {% include 'events/includes/list.html' with events=events %}
+        </div>
+        <div class="col-lg-4 col-md-6 col-8">
+            <h2>News</h2>
+            {% include 'news/includes/list.html' with news=news %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'website/layout/base.html' %}
+{% load markdown %}
+
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block content %}
+    <img src="{{ article.image.url }}" alt="{{ article.image.name }}" width="100%" />
+    <h1>{{ article.title }}</h1>
+    {{ article.content | markdown | safe }}
+{% endblock %}
