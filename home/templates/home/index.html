@@ -1,7 +1,11 @@
 {% extends 'website/layout/base.html' %}
+{% load static %}
 
 {% block title %}Home{% endblock %}
 
+{% block pre_content %}
+    <div class="img-banner" style="background: url({% static 'img/banner.jpg' %}) no-repeat center bottom; background-size: cover"></div>
+{% endblock %}
 {% block content %}
     <h1>LEAP - Roundnet Enschede</h1>
     <p>
@@ -11,10 +15,12 @@
         <div class="col-lg-4 col-md-6 col-8">
             <h2>Events</h2>
             {% include 'events/includes/list.html' with events=events %}
+            <a class="btn btn-primary mt-2" href="{% url 'events:index' %}">All events</a>
         </div>
         <div class="col-lg-4 col-md-6 col-8">
             <h2>News</h2>
             {% include 'news/includes/list.html' with news=news %}
+            <a class="btn btn-primary mt-2" href="{% url 'news:index' %}">All news</a>
         </div>
     </div>
 {% endblock %}

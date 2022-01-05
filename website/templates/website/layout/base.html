@@ -7,9 +7,13 @@
 </head>
 <body class="bg-dark text-white">
 {% include 'website/layout/nav.html' %}
-<div id="page" class="container pt-4">
-    {% block content %}{% endblock content %}
+<div id="page">
+    {% block pre_content %}{% endblock %}
+    <div class="container pt-4">
+        {% block content %}{% endblock content %}
+    </div>
 </div>
 {% include 'website/layout/footer.html' %}
+<script src="{% static 'js/app.js' %}"></script>
 </body>
 </html>

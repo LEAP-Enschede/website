@@ -51,5 +51,5 @@ class Event(models.Model):
     end = models.DateTimeField('end')
     last_modified = models.DateTimeField('last_modified')
 
-    def __repr__(self):
+    def __str__(self):
         return self.title

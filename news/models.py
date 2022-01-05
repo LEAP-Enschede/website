@@ -10,7 +10,7 @@ class Article(models.Model):
     published_at = models.DateTimeField('published_at')
     image = models.ImageField(upload_to='news')
 
-    def __repr__(self):
+    def __str__(self):
         return self.title
 
 

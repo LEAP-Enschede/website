@@ -2,10 +2,11 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-primary">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">
-            <img class="d-inline-block align-text-top" src="{% static 'img/logo.svg' %}" height="40" alt="Logo"  />
-            <img class="d-inline-block align-text-top" src="{% static 'img/logo_text.svg' %}" height="40" alt="LEAP"  />
+            <img class="d-inline-block align-text-top" src="{% static 'img/logo.svg' %}" height="40" alt="Logo"/>
+            <img class="d-inline-block align-text-top" src="{% static 'img/logo_text.svg' %}" height="40" alt="LEAP"/>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+                aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse fs-5" id="navbar">
@@ -13,6 +14,31 @@
                 {% include 'website/layout/includes/navlink.html' with view='home:index' name='Home' %}
                 {% include 'website/layout/includes/navlink.html' with view='news:index' name='News' %}
                 {% include 'website/layout/includes/navlink.html' with view='events:index' name='Events' %}
+                {% for menu_item in menu %}
+                        {% if menu_item.has_children %}
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropDown{{ menu_item.name }}"
+                                   role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    {{ menu_item.name }}
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropDown{{ menu_item.name }}">
+                                    {% for child in menu_item.menu_items.all %}
+                                        <li>
+                                            <a class="dropdown-item" href="{{ child.get_url }}">
+                                                {{ child.name }}
+                                            </a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ menu_item.get_url }}">
+                                    {{ menu_item.name }}
+                                </a>
+                            </li>
+                        {% endif %}
+                {% endfor %}
             </ul>
         </div>
     </div>
