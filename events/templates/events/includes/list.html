@@ -1,0 +1,25 @@
+{% for event in events %}
+    <div class="card card-clickable mt-2">
+        <div class="card-body p-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-auto text-end my-auto lh-1">
+                        {{ event.start.date|date:'j' }}
+                        <br>
+                        {{ event.start|date:'M' }}
+                    </div>
+                    <div class="col-auto my-auto">
+                        <div class="card-divider"></div>
+                    </div>
+                    <div class="col my-auto">
+                        {{ event.title }}
+                    </div>
+                    <div class="col-auto my-auto text-primary">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+            <a class="stretched-link" href="{% url 'events:detail' event.uid %}"></a>
+        </div>
+    </div>
+{% endfor %}

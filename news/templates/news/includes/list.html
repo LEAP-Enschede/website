@@ -1,0 +1,14 @@
+{% load markdown %}
+
+{% for article in news %}
+    <div class="card">
+        <img class="card-img" src="{{ article.image.url }}" alt="{{ article.image.name }}"/>
+        <div class="card-img-overlay bg-darken hoverable">
+            <div class="card-title">
+                <h3>{{ article.title }}</h3>
+            </div>
+            {{ article.content|markdown|truncatechars_html:100|striptags }}
+            <a class="stretched-link" href="{% url 'news:article' article.id %}"></a>
+        </div>
+    </div>
+{% endfor %}

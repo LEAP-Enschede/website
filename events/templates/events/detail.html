@@ -1,0 +1,16 @@
+{% extends 'website/layout/base.html' %}
+{% load markdown %}
+
+{% block title %}{{ event.title }}{% endblock title %}
+
+{% block content %}
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8 col-12">
+            <h1>{{ event.title }}</h1>
+            <i class="far fa-clock"></i> {{ event.start }} - {{ event.end }}
+            <br>
+            <i class="fas fa-map-marker-alt"></i> {{ event.location }}
+            <p>{{ event.description|markdown|safe }}</p>
+        </div>
+    </div>
+{% endblock content %}}

@@ -1,1 +1,100 @@
+@import '@fortawesome/fontawesome-free/css/all.css';
+
+@import 'bootstrap/scss/functions';
+
+$primary: #F4A820;
+$secondary: darken($primary, 20);
+$dark: #231F20;
+$white: #FFFFFF;
+$black: #000000;
+
+
+//Custom card theme
+$card-bg: $black;
+$card-color: $white;
+$card-border-width: 0;
+$card-border-color: $secondary;
+$card-border-radius: 10px;
+
 @import 'bootstrap';
+
+.bg-darken {
+  background-color: rgba($dark, 0.5);
+  transition: background-color 100ms;
+
+  &.hoverable:hover {
+    background-color: rgba($dark, 0.8) !important;
+  }
+}
+
+.card-clickable {
+  transition: 200ms;
+
+  & * {
+    transition: 200ms;
+  }
+
+  &:hover {
+    background: $primary;
+    color: $dark !important;
+
+    & * {
+      color: $dark !important;
+    }
+
+    & .card-divider {
+      background: $dark;
+    }
+  }
+}
+
+.card-divider {
+  display: inline-block;
+  height: 2.5rem;
+  width: .2rem;
+  border-radius: 1rem;
+  background: $primary;
+  vertical-align: middle;
+  transition: 100ms;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  overflow-x: hidden;
+}
+
+#page {
+  flex-grow: 1;
+}
+
+.img-banner {
+  height: 300px;
+  margin: 0;
+}
+
+.angled {
+  position: relative;
+  z-index: 1;
+
+  &:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: inherit;
+    top: 0;
+    left: 0;
+    transform-origin: right top;
+    transform: skewX(20deg);
+    z-index: -1;
+  }
+}
+
+.btn {
+  border-radius: 10px;
+  font-weight: bold;
+  padding: 4px 20px;
+}

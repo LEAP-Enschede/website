@@ -1,0 +1,20 @@
+{% extends 'website/layout/base.html' %}
+{% load markdown %}
+
+{% block title %}{{ page.title }}{% endblock title %}
+
+{% block content %}
+    <h1>{{ page.title }}</h1>
+    {% if page.image %}
+        <div class="row">
+            <div class="col-lg-8 col-md-6 col-12">
+                {{ page.content | markdown | safe }}
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <img class="img-fluid" src="{{ page.image.url }}" alt="{{ page.image.name }}"/>
+            </div>
+        </div>
+    {% else %}
+        {{ page.content | markdown | safe }}
+    {% endif %}
+{% endblock content %}}

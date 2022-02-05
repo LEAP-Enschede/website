@@ -1,0 +1,26 @@
+{% extends 'website/layout/base.html' %}
+
+{% block title %}Events{% endblock title %}
+
+{% block content %}
+    <h1>Events</h1>
+    We regularly organize fun events and tournaments. Look below for any past and upcoming events.
+    <div class="row mt-4">
+        <div class="col-lg-4 col-md-6">
+            <h2>Upcoming</h2>
+            {% if upcoming|length < 1 %}
+                There are no upcoming activities.
+            {% else %}
+                {% include 'events/includes/list.html' with events=upcoming %}
+            {% endif %}
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <h2>Past</h2>
+            {% if past|length < 1 %}
+                There are no past activities.
+            {% else %}
+                {% include 'events/includes/list.html' with events=past %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock content %}}

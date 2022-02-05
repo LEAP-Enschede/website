@@ -6,7 +6,7 @@
 <h1>Activities</h1>
 <ul>
 {% for activity in activities %}
-    <li><a href="{% url 'activities:detail' activity.id %}">{{ activity.name}}</a>: {{activity.start}} - {{ activity.end}}</li>
+    <li><a href="{% url 'activities:detail' activity.id %}">{{ activity.name}}</a>: {{ activity.start }} - {{ activity.end }}</li>
 {% endfor %}
 </ul>
 {% endblock content %}}
