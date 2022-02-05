@@ -4,23 +4,46 @@
 {% block title %}Home{% endblock %}
 
 {% block pre_content %}
-    <div class="img-banner" style="background: url({% static 'img/banner.jpg' %}) no-repeat center bottom; background-size: cover"></div>
-{% endblock %}
-{% block content %}
-    <h1>LEAP - Roundnet Enschede</h1>
-    <p>
-        Welcome to LEAP, the student roundnet association of Enschede.
-    </p>
-    <div class="row">
-        <div class="col-lg-4 col-md-6 col-8">
-            <h2>Events</h2>
-            {% include 'events/includes/list.html' with events=events %}
-            <a class="btn btn-primary mt-2" href="{% url 'events:index' %}">All events</a>
-        </div>
-        <div class="col-lg-4 col-md-6 col-8">
-            <h2>News</h2>
-            {% include 'news/includes/list.html' with news=news %}
-            <a class="btn btn-primary mt-2" href="{% url 'news:index' %}">All news</a>
+    <div class="img-banner min-vh-100"
+         style="background: url({% static 'img/banner.jpg' %}) no-repeat center bottom; background-size: cover"></div>
+    <div class="container-fluid min-vh-100">
+        <div class="row min-vh-100">
+            <div class="col-lg-5 col-12 bg-dark angled">
+                <div class="d-flex h-100 flex-column justify-content-center">
+                    <div class="row justify-content-center">
+                        <div class="col-10">
+                            <h2>Events</h2>
+                            {% include 'events/includes/list.html' with events=events %}
+                            <a class="btn btn-primary mt-2" href="{% url 'events:index' %}">All events</a>
+                            <!--<br><br><br><br>
+                            <h2>News</h2>
+                            {% include 'news/includes/list.html' with news=news %}
+                            <a class="btn btn-primary mt-2" href="{% url 'news:index' %}">All news</a>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7 col-12 px-0" style="background: url('{% static 'img/banner.jpg' %}')">
+                <div class="d-flex h-100 flex-column justify-content-end">
+                    <div class="container-fluid bg-primary text-dark">
+                        <div class="row justify-content-end">
+                            <div class="col-lg-6 col-12 py-2 text-end">
+                                <h1>Take the LEAP with us!</h1>
+                                <p>
+                                    Do you want to learn, play and master the sport of roundnet?
+                                    Make some friends along the way and practive in fun activities, tournaments and
+                                    competitions?
+
+                                    Take the LEAP and we will see you soon!
+                                </p>
+                                <a class="btn btn-dark" href="#">MORE INFO <i class="fas fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+{% endblock %}
+{% block content %}
 {% endblock %}
