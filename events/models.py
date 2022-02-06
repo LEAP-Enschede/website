@@ -5,7 +5,7 @@ from icalendar import Calendar
 
 def sync_events():
     r = requests.get(
-        'https://calendar.google.com/calendar/ical/v0quro7frc169mpukj022hmb20%40group.calendar.google.com/public/basic.ics')
+        'https://calendar.google.com/calendar/ical/732bmjkmmc4u5kok9bso13jai4%40group.calendar.google.com/public/basic.ics')
     cal = Calendar.from_ical(r.text)
     events = [{
         'uid': event.decoded('uid').decode('UTF-8'),

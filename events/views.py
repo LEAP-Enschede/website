@@ -7,8 +7,8 @@ from .models import sync_events, Event
 def index(request):
     sync_events()
 
-    upcoming = Event.objects.filter(start__gte=datetime.today())
-    past = Event.objects.filter(start__lt=datetime.today())
+    upcoming = Event.objects.filter(start__gte=datetime.today()).order_by('start')
+    past = Event.objects.filter(start__lt=datetime.today()).order_by('start')
 
     return render(request, 'events/index.html', {
         'upcoming': upcoming,
