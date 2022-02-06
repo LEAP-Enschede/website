@@ -1,7 +1,5 @@
 #!/bin/sh
 
-@echo off
-
 export PATH=$PATH:/opt/cpanel/ea-nodejs10/bin/
 export PATH=$PATH:/usr/bin/
 
