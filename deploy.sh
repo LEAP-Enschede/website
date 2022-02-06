@@ -1,11 +1,18 @@
-export STORAGEPATH=/home/roundnetensc/apps/website_storage
-alias npm=/opt/cpanel/ea-nodejs10/bin/npm
-alias node=/opt/cpanel/ea-nodejs10/bin/node
-alias pip=/usr/bin/pip3
-alias python=/usr/bin/python
-npm install
-npm run dev
-pip install -r ./requirements.txt
-python ./manage.py migrate
-python ./manage.py collectstatic
-ln -s $STORAGEPATH/media media
+#!/bin/sh
+
+export PATH=$PATH:/opt/cpanel/ea-nodejs10/bin/
+export PATH=$PATH:/usr/bin/
+
+cd website
+
+LOCAL=$(git rev-parse @)
+REMOTE=$(git rev-parse "@{u}")
+
+if [ "$LOCAL" != "$REMOTE" ]; then
+  git pull
+  npm install
+  pip3 install -r ./requirements.txt
+  npm run build
+  python3 ./manage.py migrate
+  python3 ./manage.py collectstatic
+fi
