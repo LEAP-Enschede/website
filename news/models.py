@@ -15,5 +15,5 @@ class Article(models.Model):
 
 
 def get_recent_articles():
-    relevant_date = datetime.now() - relativedelta(months=1)
+    relevant_date = datetime.now() - relativedelta(months=6)
     return Article.objects.filter(published_at__gte=relevant_date)
