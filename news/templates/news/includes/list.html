@@ -1,8 +1,8 @@
 {% load markdown %}
 
 {% for article in news %}
-    <div class="card">
-        <img class="card-img" src="{{ article.image.url }}" alt="{{ article.image.name }}"/>
+    <div class="card mb-2">
+        <img class="card-img" style=" max-height: 10rem; object-fit: cover" src="{{ article.image.url }}" alt="{{ article.image.name }}"/>
         <div class="card-img-overlay bg-darken hoverable">
             <div class="card-title">
                 <h3>{{ article.title }}</h3>
