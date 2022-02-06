@@ -58,6 +58,10 @@ $card-border-radius: 10px;
   transition: 100ms;
 }
 
+html {
+  scroll-padding-top: 0px;
+}
+
 body {
   min-height: 100vh;
   display: flex;
