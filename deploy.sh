@@ -7,6 +7,8 @@ cd /home/leaproundnetensc/apps/website
 
 echo "Checking current version"
 
+git remote update
+
 LOCAL=$(git rev-parse @)
 REMOTE=$(git rev-parse "@{u}")
 
@@ -17,7 +19,7 @@ if [ "$LOCAL" != "$REMOTE" ]; then
   pip3 install -r ./requirements.txt
   npm run build
   python3 ./manage.py migrate
-  python3 ./manage.py collectstatic
+  python3 ./manage.py collectstatic --noinput
   echo "Finished update"
 else
   echo "Already up-to-date"
