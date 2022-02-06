@@ -3,6 +3,7 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/roundnetenc/apps/website
     - export STORAGEPATH=/home/roundnetensc/apps/website_storage
+    - rm -rf $DEPLOYPATH
     - cp -r ./*$DEPLOYPATH
     - cd $DEPLOYPATH
     - alias npm=/opt/cpanel/ea-nodejs10/bin/npm
