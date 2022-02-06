@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/roundnetenc/apps/website
+    - export DEPLOYPATH=/home/roundnetenc/apps/website2
     - export STORAGEPATH=/home/roundnetensc/apps/website_storage
     - /bin/rm -rf $DEPLOYPATH
     - /bin/cp -r . $DEPLOYPATH
