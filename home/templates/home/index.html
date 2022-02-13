@@ -3,14 +3,19 @@
 
 {% block title %}Home{% endblock %}
 
+
 {% block page %}
+
+    <div class="container pt-4 my-3">
+        {% block content %}{% endblock content %}
+    </div>
 {#    <div class="img-banner min-vh-100"#}
 {#         style="background: url({% static 'img/banner.jpg' %}) no-repeat center bottom; background-size: cover"></div>#}
-    <div class="container-fluid m-0 p-0" style="height: 100vh">
-        <video class="video-fluid" style="height: 100%;" playsinline autoplay loop muted>
+    <div class="container-fluid m-0 p-0" style="height: 56vw">
+        <video class="video-fluid" style="width: 100%;" playsinline autoplay loop muted>
             <source src="{% static 'vid/LEAP-Trailer.mp4' %}" alt="Trailer" type="video/mp4">
         </video>
-        <a href="#start"><i class="fas fa-chevron-down text-secondary" style="font-size: 6rem; position: absolute; top: 90vh; left: 50%; transform: translateX(-50%);"></i></a>
+        <a href="#start"><i class="fas fa-chevron-down text-secondary" style="font-size: 6rem; position: absolute; top: 50vw; left: 50%; transform: translateX(-50%);"></i></a>
 {#        <button type="button" class="btn btn-secondary mx-5">Take the Leap!</button>#}
 {#        <h1>We are LEAP, the student roundnet association in Enschede</h1>#}
     </div>
