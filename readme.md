@@ -10,5 +10,6 @@ This is the django website of LEAP, the roundnet association of Enschede.
 4. Start your virtualenv
 5. Run `pip install -r requirements.txt`
 6. Run `yarn`
-7. Run `python ./manage.py migrate`
-8. To start the development server, run `yarn run dev`
+7. Copy website/.env.example to website/.env (if needed, change any settings in this file, the default example settings should work for local development).
+8. Run `python ./manage.py migrate`
+9. To start the development server, run `yarn run dev`
