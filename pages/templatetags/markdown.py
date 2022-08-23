@@ -9,4 +9,4 @@ register = template.Library()
 @register.filter()
 @stringfilter
 def markdown(content):
-    return md.markdown(content, extensions=['markdown.extensions.fenced_code'])
+    return md.markdown(content, extensions=['markdown.extensions.fenced_code']).replace('<a', '<a target="_blank"')
